@@ -32,6 +32,12 @@ public class EmployeePayrollService {
 		else if (ioService.equals(IOService.FILE_IO))
 			new EmployeePayrollFileIOService().write(employeePayrollList);
 	}
+	
+	public long countEntries(IOService ioService) {
+	    if (ioService.equals(IOService.FILE_IO))
+	        return new EmployeePayrollFileIOService().countEntries();
+	    return 0;
+	}
 
 	public void printData(IOService ioService) {
 		if (ioService.equals(IOService.FILE_IO))
@@ -44,6 +50,8 @@ public class EmployeePayrollService {
 		Scanner consoleINputReader = new Scanner(System.in);
 		employeePayrollService.readEmployeePayroll(consoleINputReader);
 		employeePayrollService.writeEmployeePayroll(IOService.FILE_IO);
+		employeePayrollService.printData(IOService.FILE_IO);
+		employeePayrollService.countEntries(IOService.FILE_IO);
 	}
 
 }

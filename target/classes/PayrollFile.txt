@@ -1,1 +1,1 @@
-id:5 name: ritu salary: 50555.0
+id:6 name: Rutuja salary: 40000.0
